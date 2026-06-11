@@ -1,0 +1,278 @@
+-- ============================================================================
+-- 系统按键绑定
+-- ============================================================================
+BINDING_NAME_TOGGLECOLLECTIONS = "打开/关闭 藏品"
+BINDING_NAME_TOGGLECOLLECTIONSHEIRLOOM = "打开/关闭 传家宝面板"
+BINDING_NAME_TOGGLECOLLECTIONSLIBRARY = "打开/关闭 炉石传说"
+BINDING_NAME_TOGGLECOLLECTIONSMOUNTJOURNAL = "打开/关闭 坐骑手册"
+BINDING_NAME_TOGGLECOLLECTIONSPETJOURNAL = "打开/关闭 宠物手册"
+BINDING_NAME_TOGGLECOLLECTIONSTOYBOX = "打开/关闭 玩具箱"
+BINDING_NAME_TOGGLECOLLECTIONSWARDROBE = "打开/关闭 外观"
+BINDING_NAME_TOGGLETRANSMOGRIFY = "打开/关闭 幻化"
+
+-- ============================================================================
+-- 核心界面全局变量 (被误伤的英文，现在全部正法！)
+-- ============================================================================
+COLLECTED = "已收集"
+COLLECTIONS = "藏品大厅"
+HEIRLOOMS = "传家宝"
+MOUNTS = "坐骑"
+NOT_COLLECTED = "未收集"
+TOY = "玩具"
+TOY_BOX = "玩具箱"
+WARDROBE = "外观"
+TRANSMOGRIFY = "幻化"
+
+-- ============================================================================
+-- 额外补充：零售服移植插件常用的面板变量 (解决截图里残余的英文)
+-- ============================================================================
+FILTER = "过滤"
+SEARCH = "搜索"
+ALL_SOURCES = "所有来源"
+PET_JOURNAL = "宠物手册"
+IGNORE_AS_FAVORITE = "取消偏好"
+SET_AS_FAVORITE = "设为偏好"
+
+-- ============================================================================
+-- 鼠标提示、教学、UI文字
+-- ============================================================================
+COLLECTION_PAGE_NUMBER = "第 %d / %d 页"
+COLLECTION_UNOPENED_PLURAL = "你的藏品中有未打开的物品。"
+COLLECTION_UNOPENED_SINGULAR = "你的藏品中有一件未打开的物品。"
+COLLECTIONS_MICRO_BUTTON_SPEC_TUTORIAL = "坐骑、宠物、玩具和传家宝都在这里！"
+HEIRLOOM_UPGRADE_TOOLTIP_FORMAT = "传家宝升级等级：%d/%d"
+ITEM_MISSING = "缺少物品"
+ITEM_PET_KNOWN = "已收集（%d/%d）"
+LFG_LIST_CROSS_FACTION = "跨阵营"
+MOUNT_JOURNAL_SEARCH = "搜索"
+PET_BATTLE_COMBAT_LOG_PAD_STR = "    "
+PET_BATTLE_STAT_SPEED = "速度"
+PET_BATTLE_STAT_POWER = "强度"
+PET_BATTLE_STAT_HEALTH = "生命值"
+BATTLE_PET_NAME_1 = "人形"
+BATTLE_PET_NAME_2 = "龙类"
+BATTLE_PET_NAME_3 = "飞行"
+BATTLE_PET_NAME_4 = "亡灵"
+BATTLE_PET_NAME_5 = "小动物"
+BATTLE_PET_NAME_6 = "魔法"
+BATTLE_PET_NAME_7 = "元素"
+BATTLE_PET_NAME_8 = "野兽"
+BATTLE_PET_NAME_9 = "水栖"
+BATTLE_PET_NAME_10 = "机械"
+BATTLE_PET_SUMMON = "召唤"
+BATTLE_PETS_TOTAL_PETS = "宠物总数"
+PET_JOURNAL_SUMMON_RANDOM_FAVORITE_PET = "召唤随机\n偏好宠物"
+PET_JOURNAL_FILTER_USABLE_ONLY = "仅限可用"
+PET_FAMILIES = "宠物种类"
+RAID_FRAME_SORT_LABEL = "排序方式"
+TOY_PROGRESS_FORMAT = "%d/%d"
+TOYBOX_MOUSEWHEEL_PAGING_HELP = "提示：你可以使用鼠标滚轮快速翻页。"
+TOYBOX_MICRO_BUTTON_SPEC_TUTORIAL = "访问玩具箱以查看你的玩具收藏。"
+EXPANSION_FILTER_TEXT = "资料片"
+EXPANSION_NAME0 = "经典旧世"
+EXPANSION_NAME1 = "燃烧的远征"
+EXPANSION_NAME2 = "巫妖王之怒"
+DRESSING_ROOM_APPEARANCE_LIST = "外观列表"
+TRANSMOG_OUTFIT_HYPERLINK_TEXT = [[|TInterface\AddOns\ezCollections\Interface\Minimap\Tracking\Transmogrifier:13:13:-1:1|t搭配]]
+LINK_TRANSMOG_OUTFIT = "发送搭配链接"
+SLASH_TRANSMOG_OUTFIT1 = "/outfit"
+TRANSMOG_OUTFIT_MESSAGE_FORMAT = "链接了一套搭配：%s"
+TRANSMOG_OUTFIT_NONE = "无搭配"
+TRANSMOG_OUTFIT_ALL_INVALID_APPEARANCES = "此搭配无有效外观。"
+TRANSMOG_OUTFIT_SOME_INVALID_APPEARANCES = "一或多个外观无法应用至你的角色。"
+TRANSMOG_OUTFIT_CHECKING_APPEARANCES = "正在验证外观..."
+TRANSMOGRIFIED_HEADER = "已幻化为："
+WILL_BE_TRANSMOGRIFIED_HEADER = "将幻化为："
+TRANSMOGRIFIED_ENCHANT = "幻象：%s"
+TRANSMOGRIFY_TOOLTIP_ITEM_UNKNOWN_APPEARANCE_KNOWN = "你尚未收集此物品，但已从另一同模物品处收集了它的外观。"
+TRANSMOGRIFY_TOOLTIP_APPEARANCE_UNKNOWN = "你尚未收集此外观"
+WARDROBE_TOOLTIP_CYCLE = "按Tab键循环"
+WARDROBE_TOOLTIP_CYCLE_ARROW_ICON = "|TInterface\\AddOns\\ezCollections\\Interface\\Buttons\\UI-MultiCast-Action-Indicator:14:14:0:0:32:32:0:16:0:16|t"
+WEAPON_ENCHANTMENT = "武器附魔"
+-- ============================================================================
+-- 【补全】ruRU有但enUS缺失的131个全局常量 — 缺失会导致界面打开后大量报错
+-- 带 %d %s %1$s 等占位符的已精确保留格式
+-- ============================================================================
+
+-- 战斗宠物来源
+BATTLE_PET_FAVORITE = "收藏"
+BATTLE_PET_UNFAVORITE = "取消收藏"
+BATTLE_PET_SOURCE_1 = "捕捉"
+BATTLE_PET_SOURCE_2 = "任务"
+BATTLE_PET_SOURCE_3 = "供应商"
+BATTLE_PET_SOURCE_4 = "专业技能"
+BATTLE_PET_SOURCE_5 = "宠物对战"
+BATTLE_PET_SOURCE_6 = "掉落"
+BATTLE_PET_SOURCE_7 = "成就"
+BATTLE_PET_SOURCE_8 = "促销"
+BATTLE_PET_SOURCE_9 = "商城"
+BATTLE_PET_SOURCE_10 = "活动"
+BATTLE_PET_SOURCE_11 = "节日"
+BATTLE_PET_SOURCE_12 = "未知"
+
+-- 通用
+CHECK_ALL = "全选"
+UNCHECK_ALL = "取消全选"
+NEW = "新"
+NEW_CAPS = "新"
+FAVORITES = "收藏"
+FAVORITES_FILTER = "仅显示收藏"
+SOURCES = "来源"
+RESET_POSITION = "重置位置"
+UNWRAP = "拆封"
+
+-- 模型/旋转控制
+DRAG_MODEL = "拖动以旋转"
+DRAG_MODEL_TOOLTIP = "拖动模型可旋转视角"
+ROTATE_LEFT = "向左旋转"
+ROTATE_RIGHT = "向右旋转"
+ROTATE_TOOLTIP = "旋转模型"
+VIEW_IN_DRESSUP_FRAME = "在试衣间中查看"
+
+-- 错误/系统提示
+ERR_NO_RIDING_SKILL = "你需要达到20级才能向骑术训练师学习骑术并购买坐骑。"
+ERR_MOUNT_NO_FAVORITES = "你没有收藏任何坐骑。"
+ERR_COMPLETED_TRANSMOG_SET_S = "你已收集整套外观：%s。"
+ERR_LEARN_HEIRLOOM_S = "传家宝 %s 已加入你的收藏。"
+ERR_LEARN_TOY_S = "玩具 %s 已加入你的收藏。"
+ERR_LEARN_TRANSMOG_S = "外观 %s 已加入你的收藏。"
+ERR_REVOKE_TRANSMOG_S = "外观 %s 已从你的收藏中移除。"
+ERR_TRANSMOG_SET_ALREADY_KNOWN = "你已经掌握了这套外观。"
+SPELL_FAILED_MOUNT_COLLECTED_ON_OTHER_CHAR = "你的其他角色已收集此坐骑。"
+
+-- 物品相关
+ITEM_COSMETIC = "外观"
+ITEM_REQ_ALLIANCE = "联盟"
+ITEM_REQ_HORDE = "部落"
+ITEM_TOY_ONUSE = "使用：将此玩具加入玩具箱。"
+
+-- 召集令
+LFG_CALL_TO_ARMS = "召集令：%s"
+LFG_CALL_TO_ARMS_EXPLANATION = "目前急需该角色，完成随机任务可获得额外奖励。"
+
+-- 传家宝
+HEIRLOOMS_JOURNAL = "传家宝手册"
+HEIRLOOMS_CATEGORY_HEAD = "头部"
+HEIRLOOMS_CATEGORY_SHOULDER = "肩部"
+HEIRLOOMS_CATEGORY_CHEST = "胸部"
+HEIRLOOMS_CATEGORY_LEGS = "腿部"
+HEIRLOOMS_CATEGORY_BACK = "背部"
+HEIRLOOMS_CATEGORY_WEAPON = "武器"
+HEIRLOOMS_CATEGORY_TRINKETS_RINGS_AND_NECKLACES = "饰品、戒指和项链"
+HEIRLOOMS_PROGRESS_FORMAT = "%d/%d"
+HEIRLOOMS_CLASS_FILTER_FORMAT = "|c%s%s|r"
+HEIRLOOMS_CLASS_SPEC_FILTER_FORMAT = "|c%s%s - %s|r"
+HEIRLOOMS_MICRO_BUTTON_SPEC_TUTORIAL = "传家宝会根据你当前的专精提供属性加成。"
+HEIRLOOMS_JOURNAL_TUTORIAL_TAB = "点击此处打开传家宝手册。"
+HEIRLOOMS_JOURNAL_TUTORIAL_UPGRADE = "使用传家宝升级道具可提升传家宝的等级上限。"
+HEIRLOOM_UPGRADE_TOOLTIP_FORMAT = "升级等级 %d/%d"
+
+-- 坐骑手册
+MOUNT_JOURNAL_NOT_COLLECTED = "未收集"
+MOUNT_JOURNAL_NO_VALID_FAVORITES = "没有可用的收藏坐骑。"
+MOUNT_JOURNAL_SUMMON_RANDOM_FAVORITE_MOUNT = "召唤随机收藏坐骑"
+MOUNT_JOURNAL_FILTER_TYPE = "类型"
+MOUNT_JOURNAL_FILTER_GROUND = "地面坐骑"
+MOUNT_JOURNAL_FILTER_FLYING = "飞行坐骑"
+MOUNT_JOURNAL_FILTER_AQUATIC = "水上坐骑"
+MOUNT_JOURNAL_FILTER_UNUSABLE = "不可用"
+TOTAL_MOUNTS = "坐骑总数：%d"
+
+-- 玩具箱
+TOYBOX_FAVORITE_HELP = "右键点击可将玩具加入收藏。"
+
+-- 搜索
+SEARCH_LOADING_TEXT = "加载中…"
+SEARCH_PROGRESS_BAR_TEXT = "正在搜索…"
+
+-- 幻化来源
+TRANSMOG_SOURCE_1 = "首领掉落"
+TRANSMOG_SOURCE_2 = "任务"
+TRANSMOG_SOURCE_3 = "供应商"
+TRANSMOG_SOURCE_4 = "世界掉落"
+TRANSMOG_SOURCE_5 = "成就"
+TRANSMOG_SOURCE_6 = "专业技能"
+TRANSMOG_SOURCE_7 = "未知"
+TRANSMOG_SOURCE_8 = "战利品"
+TRANSMOG_SOURCE_9 = "商城"
+
+-- 幻化主界面
+TRANSMOG_COLLECTED = "已收集"
+TRANSMOGRIFIED = "已幻化为 %s"
+TRANSMOG_ALL_SPECIALIZATIONS = "所有专精"
+TRANSMOG_CURRENT_SPECIALIZATION = "当前专精"
+TRANSMOG_APPLY_TO = "应用到"
+TRANSMOG_CATEGORY_FAVORITE_LIMIT = "已达到收藏上限。"
+TRANSMOG_EMPTY_SLOT_FORMAT = "(%1$s)"
+TRANSMOG_NO_VALID_ITEMS_EQUIPPED = "没有可幻化的已装备物品。"
+TRANSMOG_REQUIRED_ABILITY = "需要技能：%s"
+TRANSMOG_REQUIRED_FACTION = "需要阵营：%s（%s）"
+TRANSMOG_REQUIRED_LEVEL = "使用此外观需要 %d 级。"
+TRANSMOG_REQUIRED_SKILL = "需要 %s 技能 %d 点。"
+
+-- 幻化教程提示
+TRANSMOG_JOURNAL_TAB_TUTORIAL = "点击此处打开外观手册。"
+TRANSMOG_MOUSE_CLICK_TUTORIAL = "左键点击预览，右键点击收藏。"
+TRANSMOG_SPECS_BUTTON_TUTORIAL = "点击切换专精外观设置。"
+TRANSMOG_SETS_TAB_TUTORIAL = "点击此处查看套装外观。"
+TRANSMOG_SETS_VENDOR_TUTORIAL = "可从供应商处购买套装外观。"
+TRANSMOG_SETS_TAB_DISABLED = "套装外观当前不可用。"
+
+-- 套装
+TRANSMOG_SET_PVE = "PvE"
+TRANSMOG_SET_PVP = "PvP"
+TRANSMOG_SET_LINK_FORMAT = "%s %s"
+TRANSMOG_SET_PARTIALLY_KNOWN = "部分已收集"
+TRANSMOG_SET_PARTIALLY_KNOWN_CLASS = "已收集 %d 件职业部件"
+TRANSMOG_SET_PARTIALLY_KNOWN_MIX = "已收集 %1$d/%2$d 件"
+TRANSMOG_SET_LIMITED_TIME_SET = "限时套装"
+TRANSMOG_SET_LIMITED_TIME_SET_TOOLTIP = "该套装仅在限定时间内可获得。"
+TRANSMOG_SETS_FAVORITE_WITH_DESCRIPTION = "收藏 %s"
+TRANSMOG_SETS_UNFAVORITE_WITH_DESCRIPTION = "取消收藏 %s"
+
+-- 外观提示
+TRANSMOG_APPEARANCE_USABLE_HOLIDAY = "需要节日：%s"
+WARDROBE_TOOLTIP_TRANSMOGRIFIER = "前往幻化师处应用此外观。"
+WARDROBE_TOOLTIP_DUNGEONS = "地下城：%s"
+WARDROBE_TOOLTIP_RAIDS = "团队副本：%s"
+WARDROBE_TOOLTIP_ENCOUNTER_SOURCE = "%s — %s"
+WARDROBE_TRANSMOGRIFY_AS = "幻化为"
+WARDROBE_ITEMS = "物品"
+WARDROBE_ALTERNATE_ITEMS = "其他外观"
+WARDROBE_OTHER_ITEMS = "其他物品"
+WARDROBE_SETS = "套装"
+WARDROBE_NO_SEARCH = "没有匹配的结果。"
+
+-- 幻化无效提示
+TRANSMOGRIFY_CLEAR_ALL_PENDING = "清除所有待定幻化"
+TRANSMOGRIFY_ILLUSION_INVALID_ITEM = "无法对此物品应用幻象。"
+TRANSMOGRIFY_INVALID_CANNOT_USE = "你无法使用此物品。"
+TRANSMOGRIFY_INVALID_DESTINATION = "无法幻化此栏位。"
+TRANSMOGRIFY_INVALID_ITEM_TYPE = "物品类型不匹配。"
+TRANSMOGRIFY_INVALID_LEGENDARY = "传说物品无法被幻化。"
+TRANSMOGRIFY_INVALID_MISMATCH = "物品类型不匹配，无法幻化。"
+TRANSMOGRIFY_INVALID_NO_ITEM = "此栏位没有物品。"
+TRANSMOGRIFY_INVALID_NOT_SOULBOUND = "只有灵魂绑定的物品才能被幻化。"
+TRANSMOGRIFY_LOSE_REFUND = "幻化后将无法退货。"
+TRANSMOGRIFY_LOSE_TRADE = "幻化后将无法交易。"
+TRANSMOGRIFY_STYLE_UNCOLLECTED = "未收集的外观"
+TRANSMOGRIFY_TOOLTIP_APPEARANCE_KNOWN = "你已收集此外观。"
+TRANSMOGRIFY_TOOLTIP_APPEARANCE_UNCOLLECTABLE = "此外观无法收集。"
+TRANSMOGRIFY_TOOLTIP_APPEARANCE_UNUSABLE = "你无法使用此外观。"
+TRANSMOGRIFY_TOOLTIP_REVERT = "恢复为原始外观"
+
+-- 套装与衣橱杂项
+TRANSMOG_OUTFIT_NEW = "新建套装"
+TRANSMOG_OUTFIT_NAME = "套装名称"
+TRANSMOG_OUTFIT_EDIT = "编辑套装"
+TRANSMOG_OUTFIT_DELETE = "删除套装"
+TRANSMOG_OUTFIT_ALREADY_EXISTS = "同名套装已存在。"
+TRANSMOG_OUTFIT_CONFIRM_SAVE = "是否保存套装 %s？"
+TRANSMOG_OUTFIT_CONFIRM_DELETE = "确定删除套装 %s 吗？"
+TRANSMOG_OUTFIT_CONFIRM_OVERWRITE = "是否覆盖套装 %s？"
+TRANSMOG_OUTFIT_POST_IN_CHAT = "发布到聊天"
+TRANSMOG_OUTFIT_COPY_TO_CLIPBOARD = "复制到剪贴板"
+TRANSMOG_OUTFIT_COPY_TO_CLIPBOARD_NOTICE = "已复制到剪贴板。"
+TRANSMOG_OUTFIT_LINK_INVALID = "套装链接无效。"
+TRANSMOG_OUTFIT_DROPDOWN_TUTORIAL = "在此选择或新建套装。"
+LINK_TRANSMOG_OUTFIT_HELPTIP = "点击可在聊天中分享此套装。"
